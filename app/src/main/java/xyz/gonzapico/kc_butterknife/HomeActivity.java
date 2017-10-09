@@ -8,23 +8,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity {
+
+  @BindView(R.id.toolbar) Toolbar toolbar;
+  @BindString(R.string.fab_message) String fabMsg;
+  @BindString(R.string.fab_button) String fabBtn;
+  @OnClick(R.id.fab) public void onFabClick(View v){
+    Snackbar.make(v, fabMsg, Snackbar.LENGTH_LONG)
+        .setAction(fabBtn, null)
+        .show();
+  }
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    ButterKnife.bind(this);
     setSupportActionBar(toolbar);
-
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-            .setAction("Action", null)
-            .show();
-      }
-    });
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {

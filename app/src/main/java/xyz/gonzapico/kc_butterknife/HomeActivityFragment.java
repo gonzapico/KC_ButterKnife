@@ -1,5 +1,6 @@
 package xyz.gonzapico.kc_butterknife;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.text.Editable;
@@ -32,6 +33,8 @@ public class HomeActivityFragment extends Fragment {
 
   @BindString(R.string.welcome_message) String welcomeMsg;
 
+  private HomeActivity mActivity;
+
   public HomeActivityFragment() {
   }
 
@@ -39,10 +42,12 @@ public class HomeActivityFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_home, container, false);
     ButterKnife.bind(this, view);
     tvWelcome.setText(welcomeMsg);
-    btnScroll = (Button) getActivity().findViewById(R.id.btnScroll);
+    mActivity = (HomeActivity) getActivity();
+    btnScroll = (Button) view.findViewById(R.id.btnScroll);
     btnScroll.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
-        // TODO add method to go to the scroll activity
+        Intent intentScrolling = new Intent(mActivity, ScrollingActivity.class);
+        mActivity.startActivity(intentScrolling);
       }
     });
     return view;

@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import butterknife.BindArray;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by gonzapico on 10/10/2017.
@@ -17,8 +20,8 @@ public class ScrollingAdapter extends RecyclerView.Adapter<ScrollingAdapter.View
   private String[] mDataset;
 
   // Provide a suitable constructor (depends on the kind of dataset)
-  public ScrollingAdapter(Context context) {
-    mDataset = context.getResources().getStringArray(R.array.scroll_data);
+  public ScrollingAdapter(String[] elements) {
+    mDataset = elements;
   }
 
   // Create new views (invoked by the layout manager)
@@ -53,10 +56,10 @@ public class ScrollingAdapter extends RecyclerView.Adapter<ScrollingAdapter.View
   // you provide access to all the views for a data item in a view holder
   public static class ViewHolder extends RecyclerView.ViewHolder {
     // each data item is just a string in this case
-    public TextView mTvCard;
+    @BindView(R.id.tvRowCard) TextView mTvCard;
     public ViewHolder(View v) {
       super(v);
-      mTvCard = (TextView) v.findViewById(R.id.tvRowCard);
+      ButterKnife.bind(this, v);
     }
   }
 }

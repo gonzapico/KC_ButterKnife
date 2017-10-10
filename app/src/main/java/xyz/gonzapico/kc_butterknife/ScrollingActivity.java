@@ -8,12 +8,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import butterknife.BindArray;
+import butterknife.ButterKnife;
 
 public class ScrollingActivity extends AppCompatActivity {
 
   private RecyclerView rvScrolling;
   private Toolbar toolbar;
   private FloatingActionButton fab;
+
+  // It could not be private or static
+  @BindArray(R.array.scroll_data)
+  String[] mDataset;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -24,6 +30,7 @@ public class ScrollingActivity extends AppCompatActivity {
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    ButterKnife.bind(this);
     setUpRecyclerView();
   }
 
@@ -42,6 +49,6 @@ public class ScrollingActivity extends AppCompatActivity {
     rvScrolling.setLayoutManager(new LinearLayoutManager(this));
 
     // specify an adapter (see also next example)
-    rvScrolling.setAdapter(new ScrollingAdapter(this));
+    rvScrolling.setAdapter(new ScrollingAdapter(mDataset));
   }
 }

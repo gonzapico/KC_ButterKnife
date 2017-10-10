@@ -12,6 +12,7 @@ import android.widget.TextView;
 import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.OnTextChanged;
 
 /**
@@ -21,8 +22,10 @@ public class HomeActivityFragment extends Fragment {
 
   private final static String TAG = "Fragment";
 
-  private Button btnScroll;
-
+  @OnClick(R.id.btnScroll) void openScrollActivity(View v){
+    Intent intentScrolling = new Intent(mActivity, ScrollingActivity.class);
+    mActivity.startActivity(intentScrolling);
+  }
 
   @BindView(R.id.tvWelcome) TextView tvWelcome;
   @OnTextChanged(value = R.id.etWelcome,
@@ -43,13 +46,6 @@ public class HomeActivityFragment extends Fragment {
     ButterKnife.bind(this, view);
     tvWelcome.setText(welcomeMsg);
     mActivity = (HomeActivity) getActivity();
-    btnScroll = (Button) view.findViewById(R.id.btnScroll);
-    btnScroll.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View view) {
-        Intent intentScrolling = new Intent(mActivity, ScrollingActivity.class);
-        mActivity.startActivity(intentScrolling);
-      }
-    });
     return view;
   }
 }

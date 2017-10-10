@@ -27,6 +27,11 @@ public class HomeActivityFragment extends Fragment {
     mActivity.startActivity(intentScrolling);
   }
 
+  @OnClick(R.id.btnPick) void openPickActivity(View v){
+    Intent intentScrolling = new Intent(mActivity, PickActivity.class);
+    mActivity.startActivity(intentScrolling);
+  }
+
   @BindView(R.id.tvWelcome) TextView tvWelcome;
   @OnTextChanged(value = R.id.etWelcome,
       callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)

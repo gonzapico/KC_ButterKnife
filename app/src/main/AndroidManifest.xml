@@ -28,6 +28,8 @@
           android:name="android.support.PARENT_ACTIVITY"
           android:value="xyz.gonzapico.kc_butterknife.HomeActivity"/>
     </activity>
+    <activity android:name=".PickActivity">
+    </activity>
   </application>
 
 </manifest>

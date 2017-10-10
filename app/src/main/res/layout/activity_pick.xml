@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context="xyz.gonzapico.kc_butterknife.PickActivity"
+    >
+
+  <CheckBox
+      android:id="@+id/cbItaly"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/italy"
+      />
+  <CheckBox
+      android:id="@+id/cbFrance"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/france"
+      />
+  <CheckBox
+      android:id="@+id/cbGermany"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/germany"
+      />
+
+  <Button
+      android:id="@+id/btnSelectAll"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/select_all"
+      />
+
+  <Button
+      android:id="@+id/btnUnselectAll"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/unselect_all"
+      />
+
+</LinearLayout>

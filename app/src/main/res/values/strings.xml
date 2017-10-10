@@ -5,6 +5,7 @@
   <string name="fab_button">Action</string>
   <string name="welcome_message">Welcome 2 KC!</string>
   <string name="btn_go_scroll">Go 4 a scroll!</string>
+  <string name="btn_go_pick">Go 4 a pick!</string>
   <string name="title_activity_scrolling">ScrollingActivity</string>
   <array name="scroll_data">
     <item>"Material is the metaphor.\n\n"
@@ -104,6 +105,11 @@
       "when a user tries to pick up one of cards.\n\n"
     </item>
   </array>
+  <string name="italy">Italia</string>
+  <string name="france">Francia</string>
+  <string name="germany">Alemania</string>
+  <string name="select_all">Seleccionar todos</string>
+  <string name="unselect_all">Deseleccionar todos</string>
 
 
 </resources>

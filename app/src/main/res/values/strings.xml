@@ -4,4 +4,5 @@
   <string name="fab_message">Replace with your own action</string>
   <string name="fab_button">Action</string>
   <string name="welcome_message">Welcome 2 KC!</string>
+  <string name="btn_go_scroll">Go 4 a scroll!</string>
 </resources>

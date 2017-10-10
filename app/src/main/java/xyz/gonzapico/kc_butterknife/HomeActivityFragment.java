@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import butterknife.BindString;
 import butterknife.BindView;
@@ -18,6 +19,9 @@ import butterknife.OnTextChanged;
 public class HomeActivityFragment extends Fragment {
 
   private final static String TAG = "Fragment";
+
+  private Button btnScroll;
+
 
   @BindView(R.id.tvWelcome) TextView tvWelcome;
   @OnTextChanged(value = R.id.etWelcome,
@@ -35,6 +39,12 @@ public class HomeActivityFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_home, container, false);
     ButterKnife.bind(this, view);
     tvWelcome.setText(welcomeMsg);
+    btnScroll = (Button) getActivity().findViewById(R.id.btnScroll);
+    btnScroll.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View view) {
+        // TODO add method to go to the scroll activity
+      }
+    });
     return view;
   }
 }

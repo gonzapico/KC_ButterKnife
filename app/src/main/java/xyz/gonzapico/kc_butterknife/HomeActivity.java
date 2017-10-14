@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseKCActivity {
 
   @BindView(R.id.toolbar) Toolbar toolbar;
   @BindString(R.string.fab_message) String fabMsg;
@@ -24,10 +24,12 @@ public class HomeActivity extends AppCompatActivity {
         .show();
   }
 
+  @Override public int getLayoutId() {
+    return R.layout.activity_home;
+  }
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_home);
-    ButterKnife.bind(this);
     setSupportActionBar(toolbar);
   }
 
